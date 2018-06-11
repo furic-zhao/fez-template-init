@@ -8,7 +8,7 @@
 module.exports = {
   {{#lint}}
   /**
-   * 启用/禁用 eslint 检测代码
+   * 启用/禁用 eslint 检测
    */
   eslint: {
     available: true
