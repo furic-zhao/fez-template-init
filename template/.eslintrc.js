@@ -20,7 +20,6 @@ module.exports = {
         ecmaVersion: 6,
         sourceType: 'module',
         parser: 'babel-eslint'
-
     },
     /**
      * 预定义全局变量
