@@ -41,9 +41,7 @@ module.exports = {
     ],
     {{/if_eq}}
     {{#if_eq lintConfig "none"}}
-    extends: [
-        'plugin:vue/essential'
-    ],
+    extends: [],
     {{/if_eq}}
     plugins: [],
     rules: {}
