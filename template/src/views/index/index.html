@@ -42,6 +42,21 @@
             └── module         // 项目公共模块 目录
   </pre>
   {{/if_eq}}
+
+  {{#if_eq pagetype "page"}}
+  <pre>
+.
+└── src
+    ├── static
+    │   └── styles
+    │       └── {{name}}.{{style}}  /／ {{name}} 页面样式文件
+    └── views
+        └── {{name}}           /／ {{name}} 页面目录
+            ├── index.html     /／ {{name}} HTML页面
+            ├── index.js       /／ {{name}} 业务逻辑脚本文件
+            └── module         /／ {{name}} 模块目录
+  </pre>
+  {{/if_eq}}
   <!-- inject:vendor:js -->
   <!-- endinject -->
   <!-- inject:common:js -->
