@@ -20,7 +20,8 @@
 </head>
 
 <body>
-  <h1>{{name}} 项目初始化成功</h1>
+  <h1>{{name}}</h1>
+  {{#if_eq type "project"}}
   <h3>项目目录结构</h3>
   <pre>
 {{name}}
@@ -31,7 +32,7 @@
     │   ├── fonts              // 字体 目录
     │   ├── images             // 图片 目录
     │   └── styles             // 样式 目录
-    │       └── index.scss     // 首页样式 文件
+    │       └── index.{{style}}     // 首页样式 文件
     └── views
         ├── index              // 首页 目录
         │   ├── index.html     // 首页HTML 文件
@@ -40,6 +41,22 @@
         └── public             // 项目公共库、工具文件 目录
             └── module         // 项目公共模块 目录
   </pre>
+  {{#/if_eq}}
+  {{#if_eq type "page"}}
+  <h3>页面目录结构</h3>
+  <pre>
+.
+└── src
+    ├── static
+    │   └── styles
+    │       └── {{name}}.{{style}}  /／ {{name}} 页面样式文件
+    └── views
+        └── {{name}}           /／ {{name}} 页面目录
+            ├── index.html     /／ {{name}} HTML页面
+            ├── index.js       /／ {{name}} 业务逻辑脚本文件
+            └── module         /／ {{name}} 模块目录
+  </pre>
+  {{/if_eq}}
   <!-- inject:vendor:js -->
   <!-- endinject -->
   <!-- inject:common:js -->
