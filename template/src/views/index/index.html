@@ -21,7 +21,7 @@
 
 <body>
   <h1>{{name}}</h1>
-  {{#if_eq type "project"}}
+  {{#if_eq pagetype "project"}}
   <h3>项目目录结构</h3>
   <pre>
 {{name}}
@@ -42,7 +42,7 @@
             └── module         // 项目公共模块 目录
   </pre>
   {{#/if_eq}}
-  {{#if_eq type "page"}}
+  {{#if_eq pagetype "page"}}
   <h3>页面目录结构</h3>
   <pre>
 .
