@@ -22,6 +22,7 @@
 <body>
   <h1>{{name}}</h1>
   <h3>项目目录结构</h3>
+  {{#if_eq pagetype "project"}}
   <pre>
 {{name}}
 ├── fez.config.js              // FEZ功能配置 文件
@@ -40,6 +41,7 @@
         └── public             // 项目公共库、工具文件 目录
             └── module         // 项目公共模块 目录
   </pre>
+  {{/if_eq}}
   <!-- inject:vendor:js -->
   <!-- endinject -->
   <!-- inject:common:js -->
