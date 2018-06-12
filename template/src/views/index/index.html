@@ -21,8 +21,8 @@
 
 <body>
   <h1>{{name}}</h1>
-  <h3>项目目录结构</h3>
   {{#if_eq pagetype "project"}}
+  <h3>项目目录结构</h3>
   <pre>
 {{name}}
 ├── fez.config.js              // FEZ功能配置 文件
@@ -43,6 +43,7 @@
   </pre>
   {{/if_eq}}
   {{#if_eq pagetype "page"}}
+  <h3>页面目录结构</h3>
   <pre>
 .
 └── src
