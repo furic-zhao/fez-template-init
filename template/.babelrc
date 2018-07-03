@@ -1,27 +1,27 @@
 {
+    "presets": [
+        ["env",
+        {
+            "modules": false,
+            "targets":
+            {
+                "browsers": ["> 1%", "last 2 versions", "not ie <= 8"]
+            }
+        }],
+        "stage-0"
+    ],
+    "plugins": ["transform-runtime"],
     "env":
     {
         "development":
         {
-            "presets": ["stage-0"],
-            "plugins": [["transform-runtime",
-            {
-                "polyfill": false
-            }]]
-        },
-        "test":
-        {
-            "presets": ["stage-0"]
+            "presets": [],
+            "plugins": []
         },
         "production":
         {
-            "presets": ["stage-0"],
-            "plugins": [
-                ["transform-runtime",
-                {
-                    "polyfill": false
-                }]
-            ]
+            "presets": [],
+            "plugins": []
         }
     }
 }
