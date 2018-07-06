@@ -1,0 +1,17 @@
+{
+  "name": "fez-template-init",
+  "version": "1.0.0",
+  "description": "使用fez-cli创建项目模板",
+  "main": "",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/furic-zhao/fez-template-init.git"
+  },
+  "author": "furic-zhao",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/furic-zhao/fez-template-init/issues"
+  },
+  "homepage": "https://github.com/furic-zhao/fez-template-init#readme"
+}

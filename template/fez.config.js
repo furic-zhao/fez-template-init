@@ -24,11 +24,7 @@ module.exports = {
      * webpack.config.js
      * 根据需求场景每个项目均可安装loader及plugin
      */
-    config: {
-      module: {
-        rules: []
-      }
-    },
+    config: {},
     /**
      * 用于提取合并公共模块
      * {

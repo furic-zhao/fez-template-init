@@ -26,8 +26,8 @@ module.exports = {
         browser: true,
         node: true,
         commonjs: true,
-        es6: true,
-        jquery: true
+        es6: true{{#if_contain modelConfig "jquery"}},
+        jquery: true{{/if_contain}}
     },
     {{#if_eq lintConfig "standard"}}
     extends: [
@@ -41,8 +41,36 @@ module.exports = {
     ],
     {{/if_eq}}
     {{#if_eq lintConfig "none"}}
-    extends: [],
+    extends: [
+    ],
     {{/if_eq}}
-    plugins: [],
-    rules: {}
+    plugins: [
+    ],
+    rules: {
+      {{#if_eq lintConfig "standard"}}
+      // allow async-await
+      'generator-star-spacing': 'off',
+      {{/if_eq}}
+      {{#if_eq lintConfig "airbnb"}}
+      // don't require .vue extension when importing
+      'import/extensions': ['error', 'always', {
+        js: 'never',
+        vue: 'never'
+      }],
+      // disallow reassignment of function parameters
+      // disallow parameter object manipulation except for specific exclusions
+      'no-param-reassign': ['error', {
+        props: true,
+        ignorePropertyModificationsFor: [
+          'state', // for vuex state
+          'acc', // for reduce accumulators
+          'e' // for e.returnvalue
+        ]
+      }],
+      // allow optionalDependencies
+      'import/no-extraneous-dependencies': ['error', {
+        optionalDependencies: ['test/unit/index.js']
+      }],
+      {{/if_eq}}
+    }
 }
