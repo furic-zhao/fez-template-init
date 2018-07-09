@@ -2,12 +2,12 @@ module.exports = {
   prompts: [{
     type: 'input',
     name: 'projectName',
-    message: 'Project name',
+    message: '请填写项目目录名（字母或数字组合）：',
     default: 'fez-template'
   }, {
     type: 'list',
     name: 'style',
-    message: 'Select style compiler',
+    message: '请选择样式编译：',
     choices: [{
       name: 'Sass',
       value: 'scss',
@@ -28,14 +28,14 @@ module.exports = {
   }, {
     name: 'userModel',
     type: 'confirm',
-    message: 'Enable platform technology selection?',
+    message: '是否配置技术平台?',
   }, {
     when: function(answers) {
       return answers.userModel === true;
     },
     type: 'list',
     name: 'modelConfig',
-    message: 'Select tech platform.',
+    message: '请选择技术平台：',
     choices: [{
       name: 'none (configure it yourself)',
       checked: false,
@@ -60,16 +60,16 @@ module.exports = {
   }, {
     name: 'lint',
     type: 'confirm',
-    message: 'Use ESLint to lint your code?',
+    message: '是否使用Eslint检测代码？',
   }, {
     when: function(answers) {
       return answers.lint === true;
     },
     name: 'lintConfig',
     type: 'list',
-    message: 'Pick an ESLint preset',
+    message: '选择Eslint预置配置：',
     choices: [{
-        name: 'none (configure it yourself)',
+        name: 'none (自行配置eslint规则)',
         value: 'none',
         short: 'none',
       }, {
@@ -86,7 +86,7 @@ module.exports = {
   }, {
     type: 'list',
     name: 'autoInstall',
-    message: 'auto run `npm install`?',
+    message: '是否使用自动安装NPM包？',
     choices: [{
         name: 'Yes, use NPM',
         value: 'npm',

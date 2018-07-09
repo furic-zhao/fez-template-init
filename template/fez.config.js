@@ -24,7 +24,13 @@ module.exports = {
      * webpack.config.js
      * 根据需求场景每个项目均可安装loader及plugin
      */
-    config: {},
+    config: {
+      {{#if_eq modelConfig "jquery"}}
+      externals: {
+        jquery: 'jQuery'
+      }
+      {{/if_eq}}
+    },
     /**
      * 用于提取合并公共模块
      * {
