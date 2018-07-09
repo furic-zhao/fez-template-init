@@ -15,12 +15,12 @@
     {
         "development":
         {
-            "presets": [{{#if_contain modelConfig "react"}}"react"{{/if_contain}}],
-            "plugins": [{{#if_contain modelConfig "react"}}"react-hot-loader/babel"{{/if_contain}}]
+            "presets": [{{#if_eq modelConfig "react"}}"react"{{/if_eq}}],
+            "plugins": [{{#if_eq modelConfig "react"}}"react-hot-loader/babel"{{/if_eq}}]
         },
         "production":
         {
-            "presets": [{{#if_contain modelConfig "react"}}"react"{{/if_contain}}],
+            "presets": [{{#if_eq modelConfig "react"}}"react"{{/if_eq}}],
             "plugins": []
         }
     }

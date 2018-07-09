@@ -26,26 +26,31 @@ module.exports = {
         browser: true,
         node: true,
         commonjs: true,
-        es6: true{{#if_contain modelConfig "jquery"}},
-        jquery: true{{/if_contain}}
+        es6: true{{#if_eq modelConfig "jquery"}},
+        jquery: true{{/if_eq}}
     },
     {{#if_eq lintConfig "standard"}}
     extends: [
+        {{#if_eq modelConfig "vue"}}'plugin:vue/essential',{{/if_eq}}
+        {{#if_eq modelConfig "react"}}"eslint:recommended","plugin:react/recommended",{{/if_eq}}
         // https://github.com/standard/standard/blob/master/docs/RULES-en.md
         'standard'
     ],
     {{/if_eq}}
     {{#if_eq lintConfig "airbnb"}}
     extends: [
+        {{#if_eq modelConfig "react"}}"eslint:recommended","plugin:react/recommended",{{/if_eq}}
+        {{#if_eq modelConfig "vue"}}'plugin:vue/essential',{{/if_eq}}
         'airbnb-base'
     ],
     {{/if_eq}}
     {{#if_eq lintConfig "none"}}
     extends: [
+      {{#if_eq modelConfig "vue"}}'plugin:vue/essential'{{/if_eq}}
+      {{#if_eq modelConfig "react"}}"eslint:recommended","plugin:react/recommended"{{/if_eq}}
     ],
     {{/if_eq}}
-    plugins: [
-    ],
+    plugins: [{{#if_eq modelConfig "vue"}}'vue'{{/if_eq}}{{#if_eq modelConfig "react"}}'react'{{/if_eq}}],
     rules: {
       {{#if_eq lintConfig "standard"}}
       // allow async-await
