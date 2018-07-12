@@ -1,6 +1,6 @@
 {
   "name": "fez-template-init",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "使用fez-cli创建项目模板",
   "main": "",
   "scripts": {},
