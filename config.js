@@ -86,7 +86,7 @@ module.exports = {
   }, {
     type: 'list',
     name: 'autoInstall',
-    message: '是否使用自动安装NPM包？',
+    message: '是否自动安装NPM包？',
     choices: [{
         name: 'Yes, use NPM',
         value: 'npm',
